@@ -11,13 +11,13 @@ function init() {
     resetData();
 
     // READING JSON
-    d3.json("samples").then((data => {
+    d3.json("../samples.json").then((data => {
 
         // LOOP THORUGH NAMES TO GIVE AS OPTIONS TO CHOOSE
-        data.names.forEach(name => {
+        data.names.forEach((name => {
             var option = userInput.append("option");
             option.text(name);
-        });
+        }));
 
         // CREATING VARIABLE WITH THE NAME CHOSEN
         var initId = userInput.property("value")
@@ -28,14 +28,14 @@ function init() {
     }));
 };
 
-// RESET DATA FUNCTION TO RESET HTML
+// RESET DATA FUNCTION
 function resetData() {
     barChart.html("");
 };
 
 // FUNCTION TO GET DATA IN JSON AND START FORMATTING
-function createCharts() {
-    d3.json("samples.json").then((data) => {
+function createCharts(id) {
+    d3.json("../samples.json").then((data) => {
         console.log(data);
 
         // OTU_IDS
@@ -113,7 +113,7 @@ function optionChanged(id) {
 
     // ONCE RESET IS DONE, CALL CREATE CHART FUNCTION
     createCharts(id);
-}
+};
 
 // CALLING INITIAL FUNCTION TO RUN WHEN BROWSER OPENS
 init();
