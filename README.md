@@ -1,4 +1,4 @@
-# Plot.ly Homework - Belly Button Biodiversity
+# Plotly Analysis
 
 This assignment was created in its entiriety in Javascript D3.
 
